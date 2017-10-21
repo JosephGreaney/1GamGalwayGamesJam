@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 103374885}
   - component: {fileID: 103374884}
   - component: {fileID: 103374887}
+  - component: {fileID: 103374888}
   m_Layer: 0
   m_Name: Partygoer 1
   m_TagString: Person
@@ -232,6 +233,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &103374888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 103374883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 482cbf1635760044bba863a2f6319432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlighted: 0
+  word: 
 --- !u!1 &226557158
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,9 +359,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9eaaf17c65c1aa428ea645c5e06e523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spook: boo!
   rigidbody2D: {fileID: 226557163}
   pickedUp: {fileID: 0}
+  currentTouching: []
+  highlighedObject: 0
   UI: {fileID: 1409172400}
 --- !u!50 &226557163
 Rigidbody2D:
