@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,11 +26,15 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
-        rb2d.AddForce (movement * speed);
-        /*if (rb2d.velocity == velocityCheck)
+        if (moveHorizontal != 0 || moveVertical != 0)
         {
+            Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+            Vector3 vectorToTarget = new Vector3(movement.x, movement.y, 0);
+            float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - 90;
+            Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speed);
 
-        }*/
+            rb2d.AddForce(movement * speed);
+        }
     }
 }
