@@ -29,12 +29,16 @@ public class PlayerController : MonoBehaviour
         if (moveHorizontal != 0 || moveVertical != 0)
         {
             Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-            Vector3 vectorToTarget = new Vector3(movement.x, movement.y, 0);
-            float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - 90;
-            Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-            transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speed);
+            RotateCharacter(new Vector3(moveHorizontal, moveVertical, 0));
 
             rb2d.AddForce(movement * speed);
         }
+    }
+
+    private void RotateCharacter(Vector3 rotateDirection)
+    {
+        float angle = Mathf.Atan2(rotateDirection.y, rotateDirection.x) * Mathf.Rad2Deg - 90;
+        Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * speed);
     }
 }
