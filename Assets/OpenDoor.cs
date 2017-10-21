@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class OpenDoor : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public Animation openDoorAnimation;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        this.openDoorAnimation.Play();
+    }
 }
