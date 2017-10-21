@@ -610,7 +610,7 @@ Tilemap:
   - first: {x: -4, y: -8, z: 0}
     second:
       m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -694,14 +694,14 @@ Tilemap:
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: 3d2896855f5b5894991f06834aa84b7c, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 8
     m_Data: {fileID: 21300000, guid: e4b59a13c400f654282f60a27070d9fd, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 2aeae9661b338e8479fd727d4ad1d881, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 3d2896855f5b5894991f06834aa84b7c, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 10
     m_Data:
@@ -9191,7 +9191,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.15}
+  m_Size: {x: 0.15, y: 0.15}
   m_EdgeRadius: 0
 --- !u!1 &1462386425
 GameObject:
@@ -9208,7 +9208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!156049354 &1462386426
 Grid:
   m_ObjectHideFlags: 0
@@ -11847,7 +11847,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!156049354 &1573428176
 Grid:
   m_ObjectHideFlags: 0
