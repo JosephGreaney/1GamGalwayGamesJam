@@ -9,6 +9,11 @@ public class ColourRandomizer : MonoBehaviour
     private void Start()
     {
         rend = GetComponent<SpriteRenderer>();
+        Randomize();
+    }
+
+    public void Randomize()
+    {
         rend.color = colours[Random.Range(0, colours.Length)];
     }
 }
