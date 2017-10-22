@@ -6,10 +6,12 @@ public class ControlScript : MonoBehaviour
 {
 
     public GameObject anNPC;
-    public Transform spawnLocation;
+    public Transform[] spawnLocations;
 
     void Awake()
     {
-        Instantiate(anNPC, spawnLocation);
+        Instantiate(anNPC, spawnLocations[0]);
+        Instantiate(anNPC, spawnLocations[1]);
+        Instantiate(anNPC, spawnLocations[2]);
     }
 }
