@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114211577070842116}
   - component: {fileID: 114156196628706902}
   - component: {fileID: 61611800472720594}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4460931746122866}
   - component: {fileID: 212114033138215300}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Character_Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4402638766671414}
   - component: {fileID: 212436605638600262}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Character_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4835213359624984}
   - component: {fileID: 212771275029736672}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Character_Hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1317768430342016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.53, y: -7.85, z: 0}
+  m_LocalPosition: {x: -8.89, y: 14.52, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 4402638766671414}
