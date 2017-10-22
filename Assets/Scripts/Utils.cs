@@ -6,9 +6,8 @@ using UnityEngine;
 public class Utils : MonoBehaviour
 {
     private static List<string> names = new List<string> { "Larry", "Bob", "Lucy" };
-    private static List<string> weaknesses = new List<string> { "Anime", "BeerItem", "Food" };
     private string name;
-    private string weakness;
+    public string weakness;
     Dictionary<string, string[]> paths = new Dictionary<string, string[]>{
         {"v01",new string[]{"v02","v03","v04","v06","v11"}},
         {"v02",new string[]{"v01","v04","v05","v11","v12"}},
@@ -34,9 +33,6 @@ public class Utils : MonoBehaviour
     void Start()
 	{
         name = names[Random.Range(0, names.Count)];
-        weakness = weaknesses[Random.Range(0, weaknesses.Count)];
-        names.Remove(name);
-        weaknesses.Remove(weakness);
     }
 
 	public string GetName()

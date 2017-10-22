@@ -22,6 +22,7 @@ public class NPCMoveScript : MonoBehaviour {
         moving = false;
         nodeList = new List<Transform>();
         navNodes = GameObject.FindGameObjectsWithTag("NavNode");
+        GoTo("shower");
     }
 	
 	// Update is called once per frame
@@ -76,7 +77,7 @@ public class NPCMoveScript : MonoBehaviour {
         {
             foreach (GameObject node in navNodes)
                 if (node.name.Equals(vertex))
-                    AddNodeToTheStartOfThePath(node.transform);
+                    AddNodeToTheEndOfThePath(node.transform);
         }
 
     }
