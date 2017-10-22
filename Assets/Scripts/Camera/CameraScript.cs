@@ -18,4 +18,9 @@ public class CameraScript : MonoBehaviour
 
         this.transform.position = position;
     }
+
+    public void newObjectToFollow(GameObject target)
+    {
+        objectToFollow = target;
+    }
 }
