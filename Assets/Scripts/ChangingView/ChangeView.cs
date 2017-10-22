@@ -8,7 +8,7 @@ public class ChangeView : MonoBehaviour
     public GameObject currentView;
     public GameObject nextView;
     public GameObject player;
-
+    public List<GameObject> items;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,6 +17,11 @@ public class ChangeView : MonoBehaviour
         {
             this.nextView.SetActive(true);
             this.currentView.SetActive(false);
+            for(int i = 0; i < items.Count; i++)
+            {
+                Debug.Log(items[i].activeSelf);
+                items[i].SetActive(!items[i].activeSelf);
+            }
         }
     }
 }

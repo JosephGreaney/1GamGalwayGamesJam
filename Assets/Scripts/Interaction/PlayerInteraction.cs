@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour {
     
     public Rigidbody2D rigidbody2D;
-    public GameObject pickedUp;
+    public GameObject PickedUp { get; set;}
     public List<GameObject> currentTouching;
     public int highlighedObject;
     public Canvas UI;
@@ -60,28 +60,26 @@ public class PlayerInteraction : MonoBehaviour {
 
     void SetHighlights(GameObject temp, bool set)
     {
-        if (temp.tag == "Person")
-            temp.GetComponent<PersonInteraction>().SetHighlighted(set);
-        else if (temp.tag == "Item")
-            temp.GetComponent<Item>().SetHighlighted(set);
-        else if (temp.tag == "Object")
-            temp.GetComponent<ItemAction>().SetHighlighted(set);
+        if (temp.GetComponent<Interaction>() != null)
+        {
+            temp.GetComponent<Interaction>().SetHighlighted(set);
+        }
     }
 
     public void PickUp(GameObject item)
     {
-        pickedUp = item.gameObject;
+        PickedUp = item.gameObject;
         UI.GetComponentInChildren<UnityEngine.UI.Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
         droppable = false;
         Invoke("allowDrop", dropCooldown);
     }
 
     public void DropItem() {
-        if (currentTouching.Count == 0 && pickedUp != null && droppable) {
+        if (currentTouching.Count == 0 && PickedUp != null && droppable) {
             Debug.Log("Dropping Item" + "currentTouching.Count = " + currentTouching.Count);
-            pickedUp.transform.position = transform.position;
-            pickedUp.SetActive(true);
-            pickedUp = null;
+            PickedUp.transform.position = transform.position;
+            PickedUp.SetActive(true);
+            PickedUp = null;
             UI.GetComponentInChildren<UnityEngine.UI.Image>().sprite = null;
         }
     }
