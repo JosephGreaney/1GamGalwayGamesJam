@@ -320,11 +320,7 @@ MonoBehaviour:
   rotationSpeed: 1
   maxSpeed: 50
   targetTransform: {fileID: 0}
-  nodeList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  nodeList: []
 --- !u!114 &114531319843071632
 MonoBehaviour:
   m_ObjectHideFlags: 1
