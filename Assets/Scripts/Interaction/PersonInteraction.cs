@@ -5,13 +5,13 @@ using UnityEngine;
 public class PersonInteraction : MonoBehaviour, Interaction
 {
     public bool highlighted;
-    public string word;
+    public SpeechBubble speechBubble;
 
     // Use this for initialization
     void Start()
     {
         highlighted = false;
-        word = "Hey there friend";
+        
     }
 
     // Update is called once per frame
@@ -32,7 +32,6 @@ public class PersonInteraction : MonoBehaviour, Interaction
 
     public void DoActionNow(GameObject caller)
     {
-        if (highlighted)
-            Debug.Log(word);
+        speechBubble.DisplaySpeechBubble();
     }
 }
