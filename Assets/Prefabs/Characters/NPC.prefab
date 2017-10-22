@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 114414949213666866}
   - component: {fileID: 114976974304806964}
   - component: {fileID: 114964327283663398}
+  - component: {fileID: 114980756746585572}
   m_Layer: 8
   m_Name: NPC
   m_TagString: Untagged
@@ -314,7 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bc961e396554bd4d96a4d459dfabe80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceToStop: 0.1
+  distanceToStop: 0.25
   speed: 25
   rotationSpeed: 1
   maxSpeed: 50
@@ -386,7 +387,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d9a3fc6a685cbe4c8b9d69e2858d5e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lureNoticeDistance: 0
+  lureNoticeDistance: 2
+  npcUtils: {fileID: 114980756746585572}
+  npcMoveScript: {fileID: 114414949213666866}
 --- !u!114 &114976974304806964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -400,6 +403,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlighted: 0
   speechBubble: {fileID: 114158839693740246}
+--- !u!114 &114980756746585572
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1725764898791256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20fc4d13a0f424748ba4853f457abbab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212260159611429250
 SpriteRenderer:
   m_ObjectHideFlags: 1
