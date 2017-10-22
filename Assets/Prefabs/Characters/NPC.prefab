@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 58223976442591624}
   - component: {fileID: 114414949213666866}
   - component: {fileID: 114976974304806964}
+  - component: {fileID: 114964327283663398}
   m_Layer: 8
   m_Name: NPC
   m_TagString: Untagged
@@ -318,7 +319,11 @@ MonoBehaviour:
   rotationSpeed: 1
   maxSpeed: 50
   targetTransform: {fileID: 0}
-  nodeList: []
+  nodeList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114531319843071632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -370,6 +375,18 @@ MonoBehaviour:
   - {r: 0.8784314, g: 0.6745098, b: 0.4117647, a: 1}
   - {r: 0.94509804, g: 0.7607843, b: 0.49019608, a: 1}
   - {r: 1, g: 0.85882354, b: 0.6745098, a: 1}
+--- !u!114 &114964327283663398
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1725764898791256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d9a3fc6a685cbe4c8b9d69e2858d5e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lureNoticeDistance: 0
 --- !u!114 &114976974304806964
 MonoBehaviour:
   m_ObjectHideFlags: 1
