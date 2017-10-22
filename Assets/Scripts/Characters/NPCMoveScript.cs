@@ -10,6 +10,8 @@ public class NPCMoveScript : MonoBehaviour {
     public float maxSpeed;
     public Transform targetTransform;
     public List<Transform> nodeList;
+    public Utils playerUtils;
+    public GameObject navNodes;
 
     private Rigidbody2D rb;
     private bool moving;
@@ -19,7 +21,8 @@ public class NPCMoveScript : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         moving = false;
         nodeList = new List<Transform>();
-	}
+        navNodes = GameObject.FindGameObjectsWithTag("NavNode");
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -64,5 +67,17 @@ public class NPCMoveScript : MonoBehaviour {
 
     public void AddNodeToTheStartOfThePath(Transform node) {
         nodeList.Insert(0, node);
+    }
+
+    public void GoTo(string pathName)
+    {
+        string[] aPath = playerUtils.specificPaths[pathName];
+        foreach (string vertex in aPath)
+        {
+            foreach (GameObject node in navNodes)
+                if (node.name.Equals(vertex))
+                    AddNodeToTheStartOfThePath(node.transform);
+        }
+
     }
 }

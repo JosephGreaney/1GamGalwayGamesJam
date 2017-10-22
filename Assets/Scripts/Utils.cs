@@ -25,10 +25,16 @@ public class Utils : MonoBehaviour
         {"v13",new string[]{"v09","v10"}}
     };
 
+    Dictionary<string, string[]> specificPaths = new Dictionary<string, string[]>{
+        {"shower",new string[]{"v06","v01","v02","v05","v07","v18"}},
+        {"road",new string[]{"v06","v01","v04","v14","v15"}},
+        {"wardroab",new string[]{"v06","v01","v03","v09","v13","v10","v19","v20"}}
+    };
+
     void Start()
 	{
-        name = names[Random.Range(0, names.Count - 1)];
-        weakness = weaknesses[Random.Range(0, weaknesses.Count - 1)];
+        name = names[Random.Range(0, names.Count)];
+        weakness = weaknesses[Random.Range(0, weaknesses.Count)];
         names.Remove(name);
         weaknesses.Remove(weakness);
     }

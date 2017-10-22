@@ -321,6 +321,7 @@ MonoBehaviour:
   maxSpeed: 50
   targetTransform: {fileID: 0}
   nodeList: []
+  playerUtils: {fileID: 114980756746585572}
 --- !u!114 &114531319843071632
 MonoBehaviour:
   m_ObjectHideFlags: 1
