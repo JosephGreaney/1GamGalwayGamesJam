@@ -24,7 +24,7 @@ public class NPCLureFollow : MonoBehaviour {
         Collider[] overlappingCol = Physics.OverlapSphere(transform.position, lureNoticeDistance, layerMask);
 
         for (int i = 0; i < overlappingCol.Length; i++) {
-            
+            //if (overlappingCol[i].name == )
         }
 
         return isAround;
