@@ -6,7 +6,7 @@ namespace Utils
     public class Character
     {
         private static List<string> names = new List<string> { "Larry", "Bob", "Lucy" };
-        private static List<string> weaknesses = new List<string> { "Anime", "Beer", "Food" };
+        private static List<string> weaknesses = new List<string> { "Anime", "BeerItem", "Food" };
         private string name;
         private string weakness;
         Dictionary<string, string[]> paths = new Dictionary<string, string[]>{
