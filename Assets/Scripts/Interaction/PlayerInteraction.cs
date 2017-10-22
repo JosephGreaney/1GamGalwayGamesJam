@@ -66,6 +66,10 @@ public class PlayerInteraction : MonoBehaviour {
         UI.GetComponentInChildren<UnityEngine.UI.Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
     }
 
+    public void DropItem() {
+
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         currentTouching.Add(col.gameObject);
@@ -77,6 +81,11 @@ public class PlayerInteraction : MonoBehaviour {
             if (col.gameObject.tag == "Person" || col.gameObject.tag == "Object" || col.gameObject.tag == "Item")
             {
                 col.GetComponent<Interaction>().DoActionNow(this.gameObject);
+            } else if (pickedUp != null) {
+                pickedUp.transform.position = transform.position;
+                pickedUp.SetActive(true);
+                pickedUp = null;
+                UI.GetComponentInChildren<UnityEngine.UI.Image>().sprite = null;
             }
         }
     }
