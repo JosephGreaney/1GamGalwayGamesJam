@@ -1,18 +1,16 @@
 using UnityEngine;
 
-[RequireComponent (typeof (Animator))]
-public class Speaker : MonoBehaviour, Interaction
+public class Shower : MonoBehaviour, Interaction
 {
-    private Animator anim;
+    [SerializeField] private GameObject particles;
     private AudioSource audio;
     private bool highlighted;
     private bool activated;
 
     private void Start()
     {
-        anim = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
-        activated = true;
+        activated = false;
     }
 
     public void Toggle()
@@ -30,14 +28,14 @@ public class Speaker : MonoBehaviour, Interaction
     public void TurnOn()
     {
         activated = true;
-        anim.SetBool("Activated", true);
-        audio.volume = 1;
+        particles.SetActive(true);
+        audio.volume = 0.4f;
     }
 
     public void TurnOff()
     {
         activated = false;
-        anim.SetBool("Activated", false);
+        particles.SetActive(false);
         audio.volume = 0;
     }
 
