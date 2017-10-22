@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 114617949237240076}
   - component: {fileID: 50844003061804940}
   m_Layer: 0
-  m_Name: PlayerGhost
+  m_Name: RandomCharacter 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
