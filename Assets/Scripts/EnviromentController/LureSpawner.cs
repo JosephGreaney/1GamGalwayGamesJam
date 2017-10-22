@@ -13,6 +13,7 @@ public class LureSpawner : MonoBehaviour {
 	void Start () {
         GameObject lureInstance = Instantiate(item);
         lureInstance.transform.parent = transform;
+        lureInstance.transform.position = transform.position;
         respawning = false;
 	}
 	
@@ -42,5 +43,6 @@ public class LureSpawner : MonoBehaviour {
         respawning = false;
         GameObject lureInstance = Instantiate(item);
         lureInstance.transform.parent = transform;
+        lureInstance.transform.position = transform.position;
     }
 }
