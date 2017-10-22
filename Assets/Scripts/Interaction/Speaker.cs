@@ -4,14 +4,15 @@ using UnityEngine;
 public class Speaker : MonoBehaviour, Interaction
 {
     private Animator anim;
-    private AudioSource audio;
+    private AudioSource aud;
     private bool highlighted;
     private bool activated;
+    [SerializeField] private NPCSpawner npcSpawner;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
-        audio = GetComponent<AudioSource>();
+        aud = GetComponent<AudioSource>();
         activated = true;
     }
 
@@ -31,14 +32,15 @@ public class Speaker : MonoBehaviour, Interaction
     {
         activated = true;
         anim.SetBool("Activated", true);
-        audio.volume = 1;
+        aud.volume = 1;
     }
 
     public void TurnOff()
     {
         activated = false;
         anim.SetBool("Activated", false);
-        audio.volume = 0;
+        npcSpawner.GetAnimeGuy().GetComponent<NPCMoveScript>().GoTo("wardroab");
+        aud.volume = 0;
     }
 
     public bool GetHighlighted()

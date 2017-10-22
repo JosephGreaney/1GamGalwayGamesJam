@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,15 +8,28 @@ public class LivingRoomController : MonoBehaviour {
     public int iterationsCompleted = 0;
     public int currentFilter = 0;
     public GameObject[] filters;
+    public bool HasPower { get; set; }
 
-	void FixedUpdate()
+    private void Start()
     {
-        if(iterationsCompleted > timestepsBetweenLightChanges)
+        HasPower = false;
+    }
+
+    void FixedUpdate()
+    {
+        if (HasPower)
         {
-            iterationsCompleted = 0;
-            filters[currentFilter%3].SetActive(false);
-            filters[currentFilter++% 3].SetActive(true);
+            if (iterationsCompleted > timestepsBetweenLightChanges)
+            {
+                iterationsCompleted = 0;
+                filters[currentFilter % 3].SetActive(false);
+                filters[currentFilter++ % 3].SetActive(true);
+            }
+            iterationsCompleted++;
         }
-        iterationsCompleted++;
+        else
+        {
+            filters[currentFilter % 3].SetActive(false);
+        }
     }
 }

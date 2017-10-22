@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 1549949435671062}
+  spawner: {fileID: 0}
 --- !u!114 &114572644201562286
 MonoBehaviour:
   m_ObjectHideFlags: 1

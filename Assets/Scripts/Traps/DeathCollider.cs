@@ -11,4 +11,14 @@ public class DeathCollider : MonoBehaviour {
             c.Kill();
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Check if a character has been hit.
+        if (collision.GetComponent<Character>())
+        {
+            Character c = collision.GetComponent<Character>();
+            c.Kill();
+        }
+    }
 }

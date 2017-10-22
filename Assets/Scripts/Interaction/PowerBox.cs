@@ -1,46 +1,33 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Shower : MonoBehaviour, Interaction
+public class PowerBox : MonoBehaviour, Interaction
 {
-    [SerializeField] private GameObject particles;
-    [SerializeField] private NPCSpawner spawner;
-    private AudioSource audio;
+    [SerializeField] private LivingRoomController lights;
+    [SerializeField] private NPCSpawner npcSpawner;
     private bool highlighted;
     private bool activated;
-    
-
 
     private void Start()
     {
-        audio = GetComponent<AudioSource>();
         activated = false;
     }
 
     public void Toggle()
     {
-        if (activated)
-        {
-            TurnOff();
-        }
-        else
-        {
-            TurnOn();
-        }
+        TurnOff();
     }
 
     public void TurnOn()
     {
         activated = true;
-        particles.SetActive(true);
-        spawner.GetBeerGuy().GetComponent<NPCMoveScript>().GoTo("shower");
-        audio.volume = 0.4f;
+        lights.HasPower = true;
     }
 
     public void TurnOff()
     {
         activated = false;
-        particles.SetActive(false);
-        audio.volume = 0;
+        lights.HasPower = false;
+        npcSpawner.GetFoodGuy().GetComponent<NPCMoveScript>().GoTo("road");
     }
 
     public bool GetHighlighted()

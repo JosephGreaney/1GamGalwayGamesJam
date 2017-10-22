@@ -22,7 +22,7 @@ public class NPCMoveScript : MonoBehaviour {
         moving = false;
         nodeList = new List<Transform>();
         navNodes = GameObject.FindGameObjectsWithTag("NavNode");
-        GoTo("shower");
+        //GoTo("shower");
     }
 	
 	// Update is called once per frame

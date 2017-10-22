@@ -12,8 +12,9 @@ public class ChangeView : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            this.nextView.SetActive(true);
-            this.currentView.SetActive(false);
+            collision.transform.position = nextView.transform.position;
+            //this.nextView.SetActive(true);
+            //this.currentView.SetActive(false);
             GameObject.Find("Player").GetComponent<PlayerInteraction>().SetView(nextView.transform);
             GameObject.Find("Player").GetComponent<PlayerInteraction>().currentTouching.Clear();
         }

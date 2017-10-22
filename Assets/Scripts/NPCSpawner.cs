@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,12 +21,18 @@ public class NPCSpawner : MonoBehaviour {
         instantiatedNPCs[2].GetComponent<Utils>().weakness = "Anime";
     }
 
-    void Start() {
-        //instantiatedNPCs[0].GetComponent<NPCMoveScript>().GoTo("shower");
+    public GameObject GetBeerGuy()
+    {
+        return instantiatedNPCs[0];
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public GameObject GetFoodGuy()
+    {
+        return instantiatedNPCs[1];
+    }
+
+    public GameObject GetAnimeGuy()
+    {
+        return instantiatedNPCs[2];
+    }
 }
