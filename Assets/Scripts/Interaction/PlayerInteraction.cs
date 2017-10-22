@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +15,6 @@ public class PlayerInteraction : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Debug.Log("WOWOW");
         droppable = false;
         rigidbody2D.GetComponent<Rigidbody2D>();
         currentTouching = new List<GameObject>();

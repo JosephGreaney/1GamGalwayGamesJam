@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +18,7 @@ public class NPCMoveScript : MonoBehaviour {
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
         moving = false;
+        nodeList = new List<Transform>();
 	}
 	
 	// Update is called once per frame

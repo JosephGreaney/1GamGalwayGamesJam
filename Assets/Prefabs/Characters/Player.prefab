@@ -21,12 +21,8 @@ GameObject:
   - component: {fileID: 4599621152570946}
   - component: {fileID: 50458695543165178}
   - component: {fileID: 114211577070842116}
-<<<<<<< HEAD
   - component: {fileID: 114156196628706902}
   - component: {fileID: 61611800472720594}
-=======
-  - component: {fileID: 61533691169966992}
->>>>>>> origin/master
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -157,11 +153,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
-<<<<<<< HEAD
 --- !u!61 &61611800472720594
-=======
---- !u!61 &61533691169966992
->>>>>>> origin/master
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -186,7 +178,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.15, y: 0.15}
   m_EdgeRadius: 0
-<<<<<<< HEAD
 --- !u!114 &114156196628706902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -204,8 +195,6 @@ MonoBehaviour:
   UI: {fileID: 223012240816327740, guid: 4598e6a3789782241bbd2fbfc7e6d5a3, type: 2}
   dropCooldown: 0
   droppable: 0
-=======
->>>>>>> origin/master
 --- !u!114 &114211577070842116
 MonoBehaviour:
   m_ObjectHideFlags: 1
