@@ -10,6 +10,7 @@ public class PlayerInteraction : MonoBehaviour {
     public int highlighedObject;
     public Canvas UI;
     public float dropCooldown;
+    public Transform view;
 
     public bool droppable;
 
@@ -77,6 +78,7 @@ public class PlayerInteraction : MonoBehaviour {
         if (currentTouching.Count == 0 && PickedUp != null && droppable) {
             Debug.Log("Dropping Item" + "currentTouching.Count = " + currentTouching.Count);
             PickedUp.transform.position = transform.position;
+            PickedUp.transform.SetParent(view, true);
             PickedUp.SetActive(true);
             PickedUp = null;
             UI.GetComponentInChildren<UnityEngine.UI.Image>().sprite = null;
@@ -89,8 +91,10 @@ public class PlayerInteraction : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        currentTouching.Add(col.gameObject);
-        
+        if (col.tag == "Object")
+        {
+            currentTouching.Add(col.gameObject);
+        }
     }
 
     void OnTriggerStay2D(Collider2D col)
@@ -112,5 +116,10 @@ public class PlayerInteraction : MonoBehaviour {
     void OnTriggerExit2D(Collider2D col)
     {
         currentTouching.Remove(col.gameObject);
+    }
+
+    public void SetView(Transform t)
+    {
+        view = t;
     }
 }
