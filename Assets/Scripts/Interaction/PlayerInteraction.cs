@@ -74,7 +74,7 @@ public class PlayerInteraction : MonoBehaviour {
     void OnTriggerStay2D(Collider2D col)
     {
         if (Input.GetButtonDown("Jump")){
-            if (col.gameObject.tag == "Person" || col.gameObject.tag == "Object" || col.gameObject.tag == "Item")
+            if (col.gameObject.tag == "Person" || col.gameObject.tag == "Object" || col.gameObject.tag == "Item" )
             {
                 col.GetComponent<Interaction>().DoActionNow(this.gameObject);
             }
