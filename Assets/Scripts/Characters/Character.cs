@@ -18,6 +18,7 @@ public class Character : MonoBehaviour
         {
             IsDead = true;
             anim.SetBool("IsDead", true);
+            GetComponent<Collider2D>().enabled = false;
         }
     }
 }
