@@ -29,9 +29,9 @@ public class PlayerController : MonoBehaviour
         if (moveHorizontal != 0 || moveVertical != 0)
         {
             Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-            RotateCharacter(new Vector3(moveHorizontal, moveVertical, 0));
-
+            movement.Normalize();
             rb2d.AddForce(movement * speed);
+            RotateCharacter(new Vector3(moveHorizontal, moveVertical, 0));
         }
     }
 
