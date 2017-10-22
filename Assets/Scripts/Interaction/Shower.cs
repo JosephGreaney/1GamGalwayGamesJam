@@ -7,6 +7,7 @@ public class Shower : MonoBehaviour, Interaction
     private bool highlighted;
     private bool activated;
 
+
     private void Start()
     {
         audio = GetComponent<AudioSource>();

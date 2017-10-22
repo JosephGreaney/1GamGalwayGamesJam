@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,11 +8,17 @@ public class FireEvent : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        textBox.SetActive(true);
+        if (collision.tag == "Player")
+        {
+            textBox.SetActive(true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        textBox.SetActive(false);
+        if (collision.tag == "Player")
+        {
+            textBox.SetActive(false);
+        }
     }
 }
