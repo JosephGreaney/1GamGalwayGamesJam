@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,14 +20,15 @@ public class TrapLocation : MonoBehaviour, Interaction  {
 
     public void DoActionNow(GameObject caller)
     {
-        item = caller.GetComponent<PlayerInteraction>().PickedUp;
+        PlayerInteraction player = caller.GetComponent<PlayerInteraction>();
+        item = player.PickedUp;
         if (item)
         {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = item.GetComponent<SpriteRenderer>().sprite;
             currentLure = item.GetComponent<SpriteRenderer>().sprite.name;
             containsLure = true;
-            item = null;
-            caller.GetComponent<PlayerInteraction>().UI.GetComponentInChildren<UnityEngine.UI.Image>().sprite = null;
+            player.PickedUp = null;
+            player.UI.GetComponentInChildren<UnityEngine.UI.Image>().sprite = null;
         }
     }
 

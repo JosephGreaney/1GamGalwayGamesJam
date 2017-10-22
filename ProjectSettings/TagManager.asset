@@ -21,7 +21,7 @@ TagManager:
   - Car
   - NPC
   - Player
-  - Car
+  - Wall
   - 
   - 
   - 
@@ -62,4 +62,10 @@ TagManager:
     locked: 0
   - name: Trap
     uniqueID: 545305155
+    locked: 0
+  - name: Item
+    uniqueID: 2326050117
+    locked: 0
+  - name: Light
+    uniqueID: 3368391313
     locked: 0

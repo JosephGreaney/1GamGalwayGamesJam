@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,13 +18,18 @@ public class NPCMoveScript : MonoBehaviour {
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
         moving = false;
+        nodeList = new List<Transform>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         // If there's any nodes in the path, move them towards the oldest node
         if (nodeList.Count > 0) {
-            MoveTowards(nodeList[0].position);
+            if (nodeList[0] == null) {
+                nodeList.RemoveAt(0);
+            } else {
+                MoveTowards(nodeList[0].position);
+            }
         }
 	}
 
