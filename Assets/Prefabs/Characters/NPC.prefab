@@ -153,7 +153,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1725764898791256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5679666, y: 1.2910879, z: -0.13876913}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4749906845313438}
@@ -322,6 +322,7 @@ MonoBehaviour:
   targetTransform: {fileID: 0}
   nodeList: []
   playerUtils: {fileID: 114980756746585572}
+  navNodes: []
 --- !u!114 &114531319843071632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -411,6 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20fc4d13a0f424748ba4853f457abbab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weakness: 
 --- !u!212 &212260159611429250
 SpriteRenderer:
   m_ObjectHideFlags: 1
