@@ -11,7 +11,7 @@ public class NPCMoveScript : MonoBehaviour {
     public Transform targetTransform;
     public List<Transform> nodeList;
     public Utils playerUtils;
-    public GameObject navNodes;
+    public GameObject[] navNodes;
 
     private Rigidbody2D rb;
     private bool moving;
