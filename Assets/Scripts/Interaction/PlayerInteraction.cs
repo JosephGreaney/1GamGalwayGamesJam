@@ -9,10 +9,14 @@ public class PlayerInteraction : MonoBehaviour {
     public List<GameObject> currentTouching;
     public int highlighedObject;
     public Canvas UI;
+    public float dropCooldown;
+
+    public bool droppable;
 
     // Use this for initialization
     void Start () {
         Debug.Log("WOWOW");
+        droppable = false;
         rigidbody2D.GetComponent<Rigidbody2D>();
         currentTouching = new List<GameObject>();
         highlighedObject = 0;
@@ -32,6 +36,10 @@ public class PlayerInteraction : MonoBehaviour {
         {
             highlighedObject++;
             UpdateHighlights();
+        }
+
+        if (Input.GetButtonDown("Jump")) {
+            DropItem();
         }
     }
 
@@ -64,15 +72,38 @@ public class PlayerInteraction : MonoBehaviour {
     {
         pickedUp = item.gameObject;
         UI.GetComponentInChildren<UnityEngine.UI.Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
+        droppable = false;
+        Invoke("allowDrop", dropCooldown);
+    }
+
+    public void DropItem() {
+        if (currentTouching.Count == 0 && pickedUp != null && droppable) {
+            Debug.Log("Dropping Item" + "currentTouching.Count = " + currentTouching.Count);
+            pickedUp.transform.position = transform.position;
+            pickedUp.SetActive(true);
+            pickedUp = null;
+            UI.GetComponentInChildren<UnityEngine.UI.Image>().sprite = null;
+        }
+    }
+
+    private void allowDrop() {
+        droppable = true;
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         currentTouching.Add(col.gameObject);
+        
     }
 
     void OnTriggerStay2D(Collider2D col)
     {
+        if (col.gameObject.tag == "Person" || col.gameObject.tag == "Object" || col.gameObject.tag == "Item") {
+            if (!currentTouching.Contains(col.gameObject)) {
+                currentTouching.Add(col.gameObject);
+            }
+        }
+
         if (Input.GetButtonDown("Jump")){
             if (col.gameObject.tag == "Person" || col.gameObject.tag == "Object" || col.gameObject.tag == "Item" )
             {
