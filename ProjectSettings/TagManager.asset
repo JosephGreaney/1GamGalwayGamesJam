@@ -7,6 +7,7 @@ TagManager:
   - Person
   - Object
   - Item
+  - NavNode
   layers:
   - Default
   - TransparentFX
